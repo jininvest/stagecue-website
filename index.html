@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StageCue — Live Performance Media Controller</title>
+<meta name="description" content="The simplest way to control video, images and audio on your LED screen or projector. Built for live events, churches, weddings and concerts. $39 one-time.">
+<meta property="og:title" content="StageCue — Live Performance Media Controller">
+<meta property="og:description" content="Control your LED screen without the complexity. Simpler than vMix, easier than OBS. 14-day free trial.">
+<meta property="og:url" content="https://stagecue.pro">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#080a0d;
+  --bg2:#0d1017;
+  --bg3:#12161f;
+  --border:#1e2535;
+  --border2:#2a3347;
+  --text:#eef0f5;
+  --text2:#9aa3b8;
+  --text3:#4a5568;
+  --amber:#e8a020;
+  --amber2:#f0b840;
+  --amber3:#c07010;
+  --green:#22c55e;
+  --max:1160px;
+  --pad:5%;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6;}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:0 var(--pad);height:58px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(8,10,13,.9);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:3px;color:var(--amber);}
+.nav-logo span{color:var(--text2);}
+.nav-links{display:flex;align-items:center;gap:28px;}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:.3px;transition:color .2s;}
+.nav-links a:hover{color:var(--text);}
+.nav-cta{background:var(--amber);color:#000;border:none;padding:8px 20px;border-radius:4px;font-size:13px;font-weight:700;cursor:pointer;text-decoration:none;letter-spacing:.3px;transition:background .15s;}
+.nav-cta:hover{background:var(--amber2);}
+
+/* ── HERO — side by side, tight ── */
+.hero{
+  padding:80px var(--pad) 0;
+  display:grid;
+  grid-template-columns:1fr 1.15fr;
+  gap:48px;
+  align-items:start;
+  max-width:var(--max);
+  margin:0 auto;
+}
+.hero-left{padding-bottom:48px;padding-top:8px;}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:7px;
+  background:rgba(232,160,32,.1);border:1px solid rgba(232,160,32,.2);
+  padding:5px 12px;border-radius:100px;
+  font-size:11px;font-weight:600;color:var(--amber);letter-spacing:1.5px;
+  text-transform:uppercase;margin-bottom:22px;
+}
+.badge-dot{width:5px;height:5px;border-radius:50%;background:var(--amber);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(232,160,32,.5)}60%{box-shadow:0 0 0 5px rgba(232,160,32,0)}}
+
+h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(52px,6.5vw,84px);
+  line-height:.95;letter-spacing:2px;
+  margin-bottom:18px;
+}
+h1 em{
+  color:transparent;-webkit-text-stroke:1.5px var(--amber);
+  font-style:normal;display:block;
+}
+.hero-desc{
+  font-size:16px;color:var(--text2);font-weight:300;
+  max-width:440px;line-height:1.7;margin-bottom:28px;
+}
+.hero-desc strong{color:var(--text);font-weight:500;}
+
+.hero-btns{display:flex;gap:10px;flex-wrap:wrap;}
+
+.hero-stats{
+  display:flex;gap:0;
+  border:1px solid var(--border);border-radius:8px;
+  overflow:hidden;margin-top:16px;
+}
+.stat{
+  flex:1;display:flex;flex-direction:column;gap:2px;
+  padding:14px 16px;
+  border-right:1px solid var(--border);
+}
+.stat:last-child{border-right:none;}
+.stat-n{font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--amber);letter-spacing:1px;line-height:1;}
+.stat-l{font-size:10px;color:var(--text3);letter-spacing:1px;text-transform:uppercase;margin-top:2px;}
+
+.btn-amber{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--amber);color:#000;border:none;
+  padding:13px 26px;border-radius:5px;font-size:14px;font-weight:700;
+  cursor:pointer;text-decoration:none;transition:all .15s;letter-spacing:.2px;
+}
+.btn-amber:hover{background:var(--amber2);transform:translateY(-1px);box-shadow:0 6px 20px rgba(232,160,32,.25);}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:8px;
+  background:transparent;color:var(--text2);
+  border:1px solid var(--border2);
+  padding:12px 24px;border-radius:5px;font-size:14px;font-weight:500;
+  cursor:pointer;text-decoration:none;transition:all .15s;
+}
+.btn-ghost:hover{border-color:var(--amber);color:var(--amber);}
+
+.hero-stats{
+  display:flex;gap:28px;padding-top:24px;
+  border-top:1px solid var(--border);
+}
+.stat{display:flex;flex-direction:column;gap:2px;}
+.stat-n{font-family:'Bebas Neue',sans-serif;font-size:30px;color:var(--amber);letter-spacing:1px;line-height:1;}
+.stat-l{font-size:11px;color:var(--text3);letter-spacing:1px;text-transform:uppercase;}
+
+.hero-right{
+  position:relative;
+  padding-bottom:48px;
+}
+.hero-screen{
+  width:100%;border-radius:8px;
+  box-shadow:0 24px 80px rgba(0,0,0,.8), 0 0 0 1px rgba(255,255,255,.07);
+  display:block;
+}
+/* Amber glow edge */
+.hero-right::before{
+  content:'';position:absolute;inset:-1px;
+  border-radius:9px;
+  background:linear-gradient(135deg,rgba(232,160,32,.25) 0%,transparent 50%);
+  z-index:-1;
+}
+/* Live badge overlay */
+.screen-live{
+  position:absolute;top:12px;right:12px;
+  background:rgba(22,163,74,.9);
+  padding:4px 10px;border-radius:4px;
+  font-size:11px;font-weight:700;color:#fff;letter-spacing:1.5px;
+  font-family:'JetBrains Mono',monospace;
+}
+
+/* ── STRIP — used-at ── */
+.strip{
+  background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:16px var(--pad);
+  display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;
+}
+.strip-label{font-size:11px;color:var(--text3);letter-spacing:2px;text-transform:uppercase;margin-right:16px;}
+.strip-tag{
+  font-size:12px;color:var(--text3);font-weight:500;
+  padding:5px 12px;border-radius:100px;border:1px solid var(--border);
+  transition:all .2s;
+}
+.strip-tag:hover{border-color:var(--border2);color:var(--text2);}
+
+/* ── WRAPPER ── */
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad);}
+
+/* ── SECTION HEADS ── */
+.s-label{
+  font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  color:var(--amber);display:flex;align-items:center;gap:8px;margin-bottom:10px;
+}
+.s-label::before{content:'';width:20px;height:1px;background:var(--amber);}
+h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(32px,4vw,52px);
+  letter-spacing:1.5px;line-height:1;margin-bottom:10px;
+}
+.s-sub{font-size:16px;color:var(--text2);font-weight:300;line-height:1.65;max-width:480px;margin-bottom:44px;}
+
+/* ── FEATURES ── */
+.features{padding:72px 0;}
+.feat-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border:1px solid var(--border);border-radius:10px;overflow:hidden;gap:1px;background:var(--border);
+}
+.feat{
+  background:var(--bg2);padding:28px 26px;
+  position:relative;transition:background .2s;
+}
+.feat:hover{background:var(--bg3);}
+.feat::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:var(--amber);transform:scaleX(0);transform-origin:left;transition:transform .25s;
+}
+.feat:hover::after{transform:scaleX(1);}
+.feat-ico{font-size:22px;margin-bottom:14px;}
+.feat-t{font-size:14px;font-weight:600;margin-bottom:7px;letter-spacing:.1px;}
+.feat-d{font-size:13px;color:var(--text2);line-height:1.6;font-weight:300;}
+
+/* ── SCREENSHOT FULL WIDTH ── */
+.showcase{padding:0 0 72px;}
+.showcase-frame{
+  border-radius:10px;overflow:hidden;
+  box-shadow:0 24px 60px rgba(0,0,0,.6);border:1px solid var(--border);
+}
+.showcase-frame img{width:100%;display:block;}
+.sc-cap{
+  padding:20px 24px;
+  background:var(--bg2);
+  border-top:1px solid var(--border);
+  display:flex;align-items:baseline;gap:32px;flex-wrap:wrap;
+}
+.sc-cap h3{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:20px;letter-spacing:1px;
+  color:var(--text);white-space:nowrap;flex-shrink:0;
+}
+.sc-cap p{
+  font-size:13px;color:var(--text2);line-height:1.6;flex:1;min-width:240px;
+}
+
+/* ── HOW IT WORKS ── */
+.how{padding:72px 0;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-top:44px;}
+.step{background:var(--bg2);padding:28px 24px;position:relative;}
+.step:hover{background:var(--bg3);}
+.step-n{
+  font-family:'Bebas Neue',sans-serif;font-size:40px;
+  color:rgba(232,160,32,.15);line-height:1;margin-bottom:10px;
+}
+.step-t{font-size:14px;font-weight:600;margin-bottom:6px;}
+.step-d{font-size:13px;color:var(--text2);line-height:1.6;font-weight:300;}
+.step::before{
+  content:'';position:absolute;left:24px;top:0;width:2px;height:0;
+  background:var(--amber);transition:height .3s;
+}
+.step:hover::before{height:100%;}
+
+/* ── COMPARISON ── */
+.compare{padding:72px 0;}
+.c-table{border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-top:44px;}
+.c-row{display:grid;grid-template-columns:2fr 1.4fr 1.4fr 1.4fr;border-bottom:1px solid var(--border);}
+.c-row:last-child{border-bottom:none;}
+.c-row.c-head{background:var(--bg3);}
+.c-cell{padding:14px 20px;font-size:13px;display:flex;align-items:center;}
+.c-head .c-cell{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text3);}
+.c-head .c-cell.hi{color:var(--amber);background:rgba(232,160,32,.05);}
+.c-cell.hi{background:rgba(232,160,32,.03);}
+.c-row:not(.c-head):hover{background:rgba(255,255,255,.02);}
+.g{color:var(--green);font-weight:500;}
+.a{color:var(--amber);}
+.d{color:var(--text3);}
+.ck{color:var(--green);font-size:15px;}
+.cx{color:var(--text3);font-size:15px;}
+
+/* ── PRICING ── */
+.pricing{padding:72px 0;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.price-wrap{
+  max-width:500px;margin:44px auto 0;
+  background:var(--bg);border:1px solid var(--border2);
+  border-radius:12px;overflow:hidden;
+  box-shadow:0 20px 60px rgba(0,0,0,.5);
+  position:relative;
+}
+.price-wrap::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--amber3),var(--amber),var(--amber2));
+}
+.price-top{padding:28px 32px;border-bottom:1px solid var(--border);}
+.price-name{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;color:var(--amber);margin-bottom:6px;}
+.price-num{font-family:'Bebas Neue',sans-serif;font-size:64px;line-height:1;letter-spacing:-1px;}
+.price-num sup{font-size:28px;vertical-align:top;margin-top:8px;display:inline-block;color:var(--text2);}
+.price-num sub{font-size:16px;color:var(--text2);font-family:'DM Sans',sans-serif;font-weight:300;}
+.price-note{font-size:12px;color:var(--text3);margin-top:6px;}
+.price-feats{padding:20px 32px;border-bottom:1px solid var(--border);}
+.pf{display:flex;align-items:center;gap:10px;padding:7px 0;font-size:14px;border-bottom:1px solid rgba(255,255,255,.03);}
+.pf:last-child{border:none;}
+.pf-ck{width:18px;height:18px;border-radius:50%;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:10px;color:var(--green);}
+.price-btns{padding:20px 32px;}
+.btn-buy{
+  display:flex;align-items:center;justify-content:center;
+  background:var(--amber);color:#000;border:none;
+  padding:14px;border-radius:6px;font-size:15px;font-weight:700;
+  cursor:pointer;text-decoration:none;width:100%;margin-bottom:10px;
+  transition:all .15s;letter-spacing:.2px;
+}
+.btn-buy:hover{background:var(--amber2);transform:translateY(-1px);box-shadow:0 6px 20px rgba(232,160,32,.25);}
+.btn-dl{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  background:transparent;color:var(--text2);border:1px solid var(--border2);
+  padding:12px;border-radius:6px;font-size:13px;font-weight:500;
+  cursor:pointer;text-decoration:none;width:100%;
+  transition:all .15s;
+}
+.btn-dl:hover{border-color:var(--text2);color:var(--text);}
+.price-guarantee{text-align:center;font-size:11px;color:var(--text3);padding:0 32px 20px;display:flex;align-items:center;justify-content:center;gap:5px;}
+
+/* ── FAQ ── */
+.faq{padding:72px 0;}
+.faq-list{max-width:680px;margin:44px auto 0;}
+.fi{border-bottom:1px solid var(--border);}
+.fq{
+  width:100%;background:none;border:none;color:var(--text);
+  padding:18px 0;font-size:15px;font-weight:500;
+  cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;text-align:left;
+  transition:color .2s;
+}
+.fq:hover{color:var(--amber);}
+.fi-ico{width:22px;height:22px;border-radius:50%;border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:var(--text3);transition:all .25s;}
+.fi.open .fi-ico{transform:rotate(45deg);border-color:var(--amber);color:var(--amber);}
+.fa{font-size:14px;color:var(--text2);line-height:1.7;font-weight:300;max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s;}
+.fi.open .fa{max-height:200px;padding-bottom:18px;}
+
+/* ── FINAL CTA ── */
+.cta{
+  padding:72px var(--pad);text-align:center;
+  position:relative;overflow:hidden;
+}
+.cta::before{
+  content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:500px;height:250px;border-radius:50%;
+  background:radial-gradient(ellipse,rgba(232,160,32,.1) 0%,transparent 70%);
+  pointer-events:none;
+}
+.cta h2{margin-bottom:12px;}
+.cta p{font-size:16px;color:var(--text2);margin-bottom:32px;font-weight:300;}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--bg2);border-top:1px solid var(--border);
+  padding:32px var(--pad);
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;
+}
+.f-logo{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;color:var(--amber);}
+.f-logo span{color:var(--text3);}
+.f-links{display:flex;gap:20px;flex-wrap:wrap;}
+.f-links a{font-size:12px;color:var(--text3);text-decoration:none;transition:color .2s;}
+.f-links a:hover{color:var(--text2);}
+.f-copy{font-size:11px;color:var(--text3);}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  .hero{grid-template-columns:1fr;padding-top:80px;}
+  .hero-left,.hero-right{padding-bottom:0;}
+  .hero-right{padding-bottom:32px;}
+  .feat-grid{grid-template-columns:1fr 1fr;}
+  .steps{grid-template-columns:1fr 1fr;}
+  .c-row{grid-template-columns:1.5fr 1fr 1fr;}
+  .c-row .c-cell:last-child,.c-head .c-cell:last-child{display:none;}
+}
+@media(max-width:600px){
+  :root{--pad:4%;}
+  .nav-links{display:none;}
+  h1{font-size:48px;}
+  .feat-grid,.steps{grid-template-columns:1fr;}
+  .hero-stats{gap:18px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Stage<span>Cue</span></div>
+  <div class="nav-links">
+    <a href="#features">Features</a>
+    <a href="#how">How it works</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <a href="https://jinivestment.gumroad.com/l/StageCue" class="nav-cta" target="_blank">Buy Now — $39</a>
+</nav>
+
+<!-- HERO -->
+<div style="max-width:var(--max);margin:58px auto 0;padding:0;">
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-badge"><span class="badge-dot"></span>Live Performance Software</div>
+    <h1>Control<br><em>the Stage.</em></h1>
+    <p class="hero-desc">The simplest way to put video, images and audio on your LED screen. Built for <strong>live events, churches, weddings</strong> and concerts. No complexity, no subscription.</p>
+    <div class="hero-btns">
+      <a href="https://jinivestment.gumroad.com/l/StageCue" class="btn-amber" target="_blank">Buy Now — $39</a>
+      <a href="https://drive.google.com/uc?export=download&id=1JI7TfR_ALAWp8HAU5WwOLfTE82XpvUXq" class="btn-ghost">⬇ Free 14-Day Trial</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="coverImageNew.png" class="hero-screen" alt="StageCue — live concert performance">
+    <div class="screen-live">● LIVE</div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-n">$39</span><span class="stat-l">One-time</span></div>
+      <div class="stat"><span class="stat-n">14</span><span class="stat-l">Day Trial</span></div>
+      <div class="stat"><span class="stat-n">2</span><span class="stat-l">PC Installs</span></div>
+      <div class="stat"><span class="stat-n">Win+Mac</span><span class="stat-l">Platforms</span></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- STRIP -->
+<div class="strip">
+  <span class="strip-label">Used at</span>
+  <span class="strip-tag">Church Services</span>
+  <span class="strip-tag">Wedding Ceremonies</span>
+  <span class="strip-tag">Concert Performances</span>
+  <span class="strip-tag">Corporate Events</span>
+  <span class="strip-tag">School Productions</span>
+  <span class="strip-tag">Community Festivals</span>
+</div>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+<div class="wrap">
+  <div class="s-label">Features</div>
+  <h2>Everything you need.<br>Nothing you don't.</h2>
+  <p class="s-sub">StageCue does one job and does it perfectly — getting your media onto the screen, reliably, every time.</p>
+  <div class="feat-grid reveal">
+    <div class="feat"><div class="feat-ico">⚡</div><div class="feat-t">Instant CUT Transition</div><div class="feat-d">Load media into Preview, hit CUT and it's live on your LED screen. Your audience sees it the moment you press the button.</div></div>
+    <div class="feat"><div class="feat-ico">🖥</div><div class="feat-t">Automatic LED Output</div><div class="feat-d">Connect via HDMI, click FULL SCREEN — StageCue automatically detects your second display and opens fullscreen with zero extra steps.</div></div>
+    <div class="feat"><div class="feat-ico">🎬</div><div class="feat-t">Plays Everything</div><div class="feat-d">MP4, MOV, AVI, JPG, PNG, GIF, MP3, WAV and more. Drag files straight into the playlist — thumbnails generate automatically.</div></div>
+    <div class="feat"><div class="feat-ico">◈</div><div class="feat-t">Smooth Transitions</div><div class="feat-d">CUT for instant switches. FADE for smooth crossfades. WIPE for reveals. FTB (Fade to Black) for clean blackouts between sections.</div></div>
+    <div class="feat"><div class="feat-ico">🎵</div><div class="feat-t">Audio Device Control</div><div class="feat-d">Route audio to any device — HDMI, speakers, Bluetooth, headphones. Independent volume for preview and output.</div></div>
+    <div class="feat"><div class="feat-ico">📋</div><div class="feat-t">Save &amp; Load Playlists</div><div class="feat-d">Save your playlist to a file and reload it next time. All media reloads in the exact same order, thumbnails and all.</div></div>
+  </div>
+</div>
+</section>
+
+<!-- SHOWCASE -->
+<section class="showcase">
+<div class="wrap">
+  <div class="showcase-frame reveal">
+    <img src="coverImageNew.png" alt="StageCue running Concert for Care — live performance">
+    <div class="sc-cap">
+      <h3>Concert for Care — Live Performance</h3>
+      <p>Preview window shows the next video ready to go. Output window plays live on the LED screen. 13-item playlist loaded and ready. One operator, zero stress.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+<div class="wrap">
+  <div class="s-label">Workflow</div>
+  <h2>Up and running in 2 minutes.</h2>
+  <p class="s-sub">No training. No manual. Just open, load your media, and go.</p>
+  <div class="steps reveal">
+    <div class="step"><div class="step-n">01</div><div class="step-t">Add Your Media</div><div class="step-d">Drag and drop video, images and audio into the playlist. Thumbnails generate automatically.</div></div>
+    <div class="step"><div class="step-n">02</div><div class="step-t">Preview First</div><div class="step-d">Click any item to load it into the Preview window. Check it looks right before anyone else sees it.</div></div>
+    <div class="step"><div class="step-n">03</div><div class="step-t">Click FULL SCREEN</div><div class="step-d">StageCue opens fullscreen on your HDMI display automatically. Your LED screen is ready to go.</div></div>
+    <div class="step"><div class="step-n">04</div><div class="step-t">Hit CUT</div><div class="step-d">Press CUT (or Enter on keyboard) and your media is live. The next item loads into Preview automatically.</div></div>
+  </div>
+</div>
+</section>
+
+<!-- COMPARISON -->
+<section class="compare" id="comparison">
+<div class="wrap">
+  <div class="s-label">Comparison</div>
+  <h2>Why not vMix or OBS?</h2>
+  <p class="s-sub">StageCue does one thing and does it well. No broadcast studio complexity.</p>
+  <div class="c-table reveal">
+    <div class="c-row c-head">
+      <div class="c-cell"></div>
+      <div class="c-cell hi">StageCue</div>
+      <div class="c-cell">vMix</div>
+      <div class="c-cell">OBS</div>
+    </div>
+    <div class="c-row"><div class="c-cell">Price</div><div class="c-cell hi"><span class="g">$39 once</span></div><div class="c-cell"><span class="d">$60–$1,200</span></div><div class="c-cell"><span class="a">Free</span></div></div>
+    <div class="c-row"><div class="c-cell">Setup time</div><div class="c-cell hi"><span class="g">2 minutes</span></div><div class="c-cell"><span class="d">Hours</span></div><div class="c-cell"><span class="d">Hours</span></div></div>
+    <div class="c-row"><div class="c-cell">Built for media playback</div><div class="c-cell hi"><span class="ck">✓</span></div><div class="c-cell"><span class="d">Overkill</span></div><div class="c-cell"><span class="d">Overkill</span></div></div>
+    <div class="c-row"><div class="c-cell">LED screen auto-detect</div><div class="c-cell hi"><span class="ck">✓</span></div><div class="c-cell"><span class="ck">✓</span></div><div class="c-cell"><span class="d">Manual</span></div></div>
+    <div class="c-row"><div class="c-cell">Save &amp; load playlists</div><div class="c-cell hi"><span class="ck">✓</span></div><div class="c-cell"><span class="ck">✓</span></div><div class="c-cell"><span class="cx">—</span></div></div>
+    <div class="c-row"><div class="c-cell">Learning curve</div><div class="c-cell hi"><span class="g">Minimal</span></div><div class="c-cell"><span class="d">Steep</span></div><div class="c-cell"><span class="d">Very steep</span></div></div>
+    <div class="c-row"><div class="c-cell">No subscription</div><div class="c-cell hi"><span class="ck">✓</span></div><div class="c-cell"><span class="d">Some tiers</span></div><div class="c-cell"><span class="ck">✓</span></div></div>
+  </div>
+</div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+<div class="wrap" style="text-align:center;">
+  <div class="s-label" style="justify-content:center;">Pricing</div>
+  <h2>Simple pricing. Own it forever.</h2>
+  <p class="s-sub" style="margin:0 auto 0;">One price. No monthly fees. No surprises. Updates included.</p>
+  <div class="price-wrap reveal">
+    <div class="price-top">
+      <div class="price-name">StageCue Pro</div>
+      <div class="price-num"><sup>$</sup>39<sub> one-time</sub></div>
+      <div class="price-note">Use on up to 2 computers · Windows &amp; Mac · Free updates</div>
+    </div>
+    <div class="price-feats">
+      <div class="pf"><div class="pf-ck">✓</div>Unlimited playlist items</div>
+      <div class="pf"><div class="pf-ck">✓</div>All transitions — CUT, FADE, WIPE</div>
+      <div class="pf"><div class="pf-ck">✓</div>LED fullscreen output on second display</div>
+      <div class="pf"><div class="pf-ck">✓</div>Audio device selection &amp; control</div>
+      <div class="pf"><div class="pf-ck">✓</div>Save &amp; load playlists</div>
+      <div class="pf"><div class="pf-ck">✓</div>Windows 10/11 + Mac (Intel &amp; Apple Silicon)</div>
+      <div class="pf"><div class="pf-ck">✓</div>Free updates forever</div>
+    </div>
+    <div class="price-btns">
+      <a href="https://jinivestment.gumroad.com/l/StageCue" class="btn-buy" target="_blank">Buy StageCue Pro — $39</a>
+      <a href="https://drive.google.com/uc?export=download&id=1JI7TfR_ALAWp8HAU5WwOLfTE82XpvUXq" class="btn-dl">⬇ Download Free 14-Day Trial</a>
+    </div>
+    <div class="price-guarantee">🛡 30-day money-back guarantee if it doesn't work on your system</div>
+  </div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+<div class="wrap">
+  <div class="s-label">FAQ</div>
+  <h2>Common questions.</h2>
+  <div class="faq-list reveal">
+    <div class="fi">
+      <button class="fq" onclick="tFAQ(this)">Does the free trial have any limitations?<span class="fi-ico">+</span></button>
+      <div class="fa">The 14-day trial gives full access to every feature. After 14 days it switches to a limited free tier (max 5 items, CUT only). Purchase a license at any time to unlock everything permanently.</div>
+    </div>
+    <div class="fi">
+      <button class="fq" onclick="tFAQ(this)">What operating systems does StageCue support?<span class="fi-ico">+</span></button>
+      <div class="fa">Windows 10 and 11 (64-bit). Mac version available for macOS 10.13+ including Apple Silicon (M1/M2/M3). Both included with your license.</div>
+    </div>
+    <div class="fi">
+      <button class="fq" onclick="tFAQ(this)">What video and audio formats are supported?<span class="fi-ico">+</span></button>
+      <div class="fa">StageCue plays any media format your system supports — typically MP4, MOV, AVI, MKV for video; JPG, PNG, GIF for images; MP3, WAV, AAC, FLAC for audio. If Windows/Mac Media Player can play it, StageCue can too.</div>
+    </div>
+    <div class="fi">
+      <button class="fq" onclick="tFAQ(this)">How do I connect my LED screen?<span class="fi-ico">+</span></button>
+      <div class="fa">Connect via HDMI. In Windows Display Settings set it to "Extend" (not Duplicate). Launch StageCue and click FULL SCREEN — it auto-detects and opens fullscreen on the second display.</div>
+    </div>
+    <div class="fi">
+      <button class="fq" onclick="tFAQ(this)">Can I use it on two computers?<span class="fi-ico">+</span></button>
+      <div class="fa">Yes. Each Pro license activates on up to 2 computers. To move to a new machine, deactivate via the File menu on the old computer first, then activate on the new one.</div>
+    </div>
+    <div class="fi">
+      <button class="fq" onclick="tFAQ(this)">How do I receive my license key after purchase?<span class="fi-ico">+</span></button>
+      <div class="fa">After purchasing on Gumroad you receive an email with your key (format: SCUE-XXXX-XXXX-XXXX-XXXX). In StageCue click the "Free Trial" badge and enter your key to activate instantly.</div>
+    </div>
+    <div class="fi">
+      <button class="fq" onclick="tFAQ(this)">Is there a refund policy?<span class="fi-ico">+</span></button>
+      <div class="fa">30-day money-back guarantee if StageCue doesn't work on your system. Email hello@stagecue.pro with your order number for a full refund, no questions asked.</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta">
+  <div class="s-label" style="justify-content:center;">Get Started</div>
+  <h2>Ready to take control<br>of the stage?</h2>
+  <p>Try free for 14 days. Buy once. Use forever.</p>
+  <div class="cta-btns">
+    <a href="https://jinivestment.gumroad.com/l/StageCue" class="btn-amber" target="_blank">Buy StageCue Pro — $39</a>
+    <a href="https://drive.google.com/uc?export=download&id=1JI7TfR_ALAWp8HAU5WwOLfTE82XpvUXq" class="btn-ghost">⬇ Download Free Trial</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-logo">Stage<span>Cue</span></div>
+  <div class="f-links">
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="mailto:hello@stagecue.pro">hello@stagecue.pro</a>
+    <a href="https://jinivestment.gumroad.com/l/StageCue" target="_blank">Buy Now</a>
+  </div>
+  <div class="f-copy">© 2024 StageCue · stagecue.pro</div>
+</footer>
+
+<script>
+function tFAQ(btn){
+  const fi=btn.closest('.fi'),open=fi.classList.contains('open');
+  document.querySelectorAll('.fi').forEach(i=>i.classList.remove('open'));
+  if(!open) fi.classList.add('open');
+}
+const obs=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+window.addEventListener('scroll',()=>{
+  document.querySelector('nav').style.background=
+    window.scrollY>30?'rgba(8,10,13,.97)':'rgba(8,10,13,.9)';
+});
+</script>
+</body>
+</html>
