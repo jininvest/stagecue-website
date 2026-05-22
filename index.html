@@ -388,7 +388,42 @@ footer{
     <p class="hero-desc">The simplest way to put video, images and audio on your LED screen. Built for <strong>live events, churches, weddings</strong> and concerts. No complexity, no subscription.</p>
     <div class="hero-btns">
       <a href="https://jinivestment.gumroad.com/l/StageCue" class="btn-amber" target="_blank">Buy Now — $39</a>
-      <a href="https://drive.google.com/uc?export=download&id=1JI7TfR_ALAWp8HAU5WwOLfTE82XpvUXq" class="btn-ghost">⬇ Free 14-Day Trial</a>
+      <div style="position:relative;display:inline-block;">
+        <button class="btn-ghost" onclick="toggleDLMenu(event)" style="gap:8px;">
+          ⬇ Free 14-Day Trial <span style="font-size:10px;opacity:.6;">▼</span>
+        </button>
+        <div id="dlMenu" style="display:none;position:absolute;top:calc(100% + 6px);left:0;
+          background:#14171c;border:1px solid #2a3347;border-radius:6px;
+          min-width:260px;z-index:50;overflow:hidden;box-shadow:0 12px 32px rgba(0,0,0,.6);">
+          <a href="https://drive.google.com/uc?export=download&id=1pnlD9Qw6UHSAVMKh1GWCijEKSwinHlTI" style="display:flex;align-items:center;gap:10px;padding:12px 16px;
+            color:#eef0f5;text-decoration:none;font-size:13px;border-bottom:1px solid #1e2535;
+            transition:background .15s;" onmouseover="this.style.background='#1a1e28'" onmouseout="this.style.background=''">
+            <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:currentColor;flex-shrink:0;opacity:.85;">
+  <path d="M3 12V6.75l6-1.32v6.48L3 12zm17 0V6.75l-7 1.56V12h7zM3 13l6 .09v5.91l-6-1.26V13zm17 0l-7 .09v5.91l7-1.26V13z"/>
+</svg>
+            <div><div style="font-weight:600;">Windows</div>
+            <div style="font-size:11px;color:#6b7280;">Setup + Portable EXE (ZIP)</div></div>
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1KOsbPCf0F2Jkm_e0rtVk_UQylg2oAJpj" style="display:flex;align-items:center;gap:10px;padding:12px 16px;
+            color:#eef0f5;text-decoration:none;font-size:13px;border-bottom:1px solid #1e2535;
+            transition:background .15s;" onmouseover="this.style.background='#1a1e28'" onmouseout="this.style.background=''">
+            <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:currentColor;flex-shrink:0;opacity:.85;">
+  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.37 2.73M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+</svg>
+            <div><div style="font-weight:600;">Mac — DMG Installer</div>
+            <div style="font-size:11px;color:#6b7280;">Recommended for Mac users</div></div>
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1XkNfwRmTTyAVmgy3TsfbHHygWa9mIbOj" style="display:flex;align-items:center;gap:10px;padding:12px 16px;
+            color:#eef0f5;text-decoration:none;font-size:13px;
+            transition:background .15s;" onmouseover="this.style.background='#1a1e28'" onmouseout="this.style.background=''">
+            <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:currentColor;flex-shrink:0;opacity:.85;">
+  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.37 2.73M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+</svg>
+            <div><div style="font-weight:600;">Mac — ZIP Archive</div>
+            <div style="font-size:11px;color:#6b7280;">Alternative Mac download</div></div>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
   <div class="hero-right">
@@ -507,7 +542,22 @@ footer{
     </div>
     <div class="price-btns">
       <a href="https://jinivestment.gumroad.com/l/StageCue" class="btn-buy" target="_blank">Buy StageCue Pro — $39</a>
-      <a href="https://drive.google.com/uc?export=download&id=1JI7TfR_ALAWp8HAU5WwOLfTE82XpvUXq" class="btn-dl">⬇ Download Free 14-Day Trial</a>
+      <div style="display:flex;gap:8px;">
+        <a href="https://drive.google.com/uc?export=download&id=1pnlD9Qw6UHSAVMKh1GWCijEKSwinHlTI" class="btn-dl" style="flex:1;flex-direction:column;gap:2px;padding:10px;">
+          <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:currentColor;flex-shrink:0;opacity:.85;">
+  <path d="M3 12V6.75l6-1.32v6.48L3 12zm17 0V6.75l-7 1.56V12h7zM3 13l6 .09v5.91l-6-1.26V13zm17 0l-7 .09v5.91l7-1.26V13z"/>
+</svg>
+          <span style="font-size:12px;font-weight:600;">Windows Trial</span>
+          <span style="font-size:10px;color:#6b7280;">Setup + Portable</span>
+        </a>
+        <a href="https://drive.google.com/uc?export=download&id=1KOsbPCf0F2Jkm_e0rtVk_UQylg2oAJpj" class="btn-dl" style="flex:1;flex-direction:column;gap:2px;padding:10px;">
+          <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:currentColor;flex-shrink:0;opacity:.85;">
+  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.37 2.73M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+</svg>
+          <span style="font-size:12px;font-weight:600;">Mac Trial</span>
+          <span style="font-size:10px;color:#6b7280;">DMG Installer</span>
+        </a>
+      </div>
     </div>
     <div class="price-guarantee">🛡 30-day money-back guarantee if it doesn't work on your system</div>
   </div>
@@ -559,7 +609,26 @@ footer{
   <p>Try free for 14 days. Buy once. Use forever.</p>
   <div class="cta-btns">
     <a href="https://jinivestment.gumroad.com/l/StageCue" class="btn-amber" target="_blank">Buy StageCue Pro — $39</a>
-    <a href="https://drive.google.com/uc?export=download&id=1JI7TfR_ALAWp8HAU5WwOLfTE82XpvUXq" class="btn-ghost">⬇ Download Free Trial</a>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+      <a href="https://drive.google.com/uc?export=download&id=1pnlD9Qw6UHSAVMKh1GWCijEKSwinHlTI" class="btn-ghost" style="flex-direction:column;gap:2px;padding:12px 20px;">
+        <span style="display:flex;align-items:center;gap:6px;"><svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:currentColor;flex-shrink:0;opacity:.85;">
+  <path d="M3 12V6.75l6-1.32v6.48L3 12zm17 0V6.75l-7 1.56V12h7zM3 13l6 .09v5.91l-6-1.26V13zm17 0l-7 .09v5.91l7-1.26V13z"/>
+</svg> Windows Trial</span>
+        <span style="font-size:10px;opacity:.6;">Setup + Portable EXE</span>
+      </a>
+      <a href="https://drive.google.com/uc?export=download&id=1KOsbPCf0F2Jkm_e0rtVk_UQylg2oAJpj" class="btn-ghost" style="flex-direction:column;gap:2px;padding:12px 20px;">
+        <span style="display:flex;align-items:center;gap:6px;"><svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:currentColor;flex-shrink:0;opacity:.85;">
+  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.37 2.73M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+</svg> Mac Trial — DMG</span>
+        <span style="font-size:10px;opacity:.6;">Recommended installer</span>
+      </a>
+      <a href="https://drive.google.com/uc?export=download&id=1XkNfwRmTTyAVmgy3TsfbHHygWa9mIbOj" class="btn-ghost" style="flex-direction:column;gap:2px;padding:12px 20px;">
+        <span style="display:flex;align-items:center;gap:6px;"><svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:currentColor;flex-shrink:0;opacity:.85;">
+  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.37 2.73M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+</svg> Mac Trial — ZIP</span>
+        <span style="font-size:10px;opacity:.6;">Alternative download</span>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -582,6 +651,15 @@ function tFAQ(btn){
   document.querySelectorAll('.fi').forEach(i=>i.classList.remove('open'));
   if(!open) fi.classList.add('open');
 }
+function toggleDLMenu(e){
+  e.stopPropagation();
+  const m=document.getElementById('dlMenu');
+  m.style.display=m.style.display==='none'?'block':'none';
+}
+document.addEventListener('click',()=>{
+  const m=document.getElementById('dlMenu');
+  if(m) m.style.display='none';
+});
 const obs=new IntersectionObserver(es=>{
   es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
 },{threshold:0.08});
