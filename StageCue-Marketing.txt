@@ -1,0 +1,259 @@
+════════════════════════════════════════════════════════════
+  STAGECUE — MARKETING COPY
+  Ready to copy and paste
+════════════════════════════════════════════════════════════
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  1. PRODUCT HUNT LAUNCH
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TAGLINE (60 chars max):
+The simplest LED screen controller for live events
+
+DESCRIPTION:
+If you've ever run AV for a church service, wedding,
+concert or corporate event, you know the pain — vMix
+costs $600+ and takes days to learn, OBS is built for
+streaming not playback, and PowerPoint just doesn't cut it.
+
+StageCue does one thing and does it perfectly: getting
+your video, images and audio onto your LED screen or
+projector, reliably, every time.
+
+How it works:
+→ Drag your media files into the playlist
+→ Click any item to preview it first
+→ Press CUT — it's live on the LED screen
+→ Next item loads into preview automatically
+
+That's the entire workflow. 2 minutes to set up, zero
+learning curve.
+
+What makes it different:
+• Automatic LED screen detection — connect HDMI, click
+  FULL SCREEN, done
+• Real dual-window workflow (Preview + Output) like
+  professional broadcast tools
+• Save and reload playlists for recurring events
+• Audio device control — route to any speaker/HDMI/Bluetooth
+• Windows and Mac, $39 one-time, 14-day free trial
+
+We've been using it at real concerts and church services
+and it just works. Would love your feedback!
+
+FIRST COMMENT (post this yourself right after launch):
+Hey Product Hunt! 👋
+
+I built StageCue after struggling with vMix's complexity
+for running simple church services and small concerts.
+I just needed something that would put my videos on the
+LED screen without a 3-hour setup every week.
+
+The whole app is built around one workflow: Preview on
+the left, Output on the right, press CUT. That's it.
+
+Free 14-day trial at stagecue.pro — would genuinely
+love to hear what you think, especially if you do AV
+for churches, weddings or small events.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  2. FACEBOOK GROUP POSTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+POST A — Church AV Groups:
+─────────────────────────
+Hey everyone — I wanted to share something I've been
+working on that might help people here.
+
+I run AV for our church and got tired of vMix being
+overkill for what we actually need (just putting videos
+and lyrics on the LED screen). So I built StageCue —
+a simple media controller specifically for this use case.
+
+The workflow is dead simple:
+• Load your playlist (videos, images, audio)
+• Preview each item before the congregation sees it
+• Press CUT to go live on the LED screen
+
+It auto-detects your HDMI display and opens fullscreen
+on it automatically. Save your playlist and reload it
+next Sunday in seconds.
+
+14-day free trial, $39 to buy. Works on Windows and Mac.
+
+Would love feedback from anyone doing weekly services —
+what features would make your Sunday mornings easier?
+
+👉 stagecue.pro
+
+
+POST B — Wedding/Event Groups:
+──────────────────────────────
+Does anyone else find vMix way too complicated just for
+playing videos at weddings and events?
+
+I built a simpler alternative called StageCue — it's
+specifically designed for getting media onto LED screens
+at live events without needing broadcast engineering skills.
+
+Perfect for:
+✓ Ceremony entrance/exit videos
+✓ Couple highlight reels
+✓ Reception slideshows
+✓ Background videos between speeches
+
+Connects to any HDMI LED screen or projector, fullscreen
+automatically. Drag in your files, preview them, hit CUT.
+
+Free trial at stagecue.pro — would love to hear if it
+fits your workflow!
+
+
+POST C — General AV/Tech Groups:
+─────────────────────────────────
+I built a vMix/OBS alternative for people who just need
+simple media playback on LED screens at live events.
+
+Not a streaming tool — purely focused on the "get this
+video/image/audio on the big screen NOW" use case.
+
+Key features:
+• Dual preview/output windows
+• CUT, FADE, WIPE transitions
+• Auto LED screen detection via HDMI
+• Save/load playlists
+• Windows + Mac
+
+$39 one-time, 14-day free trial.
+stagecue.pro
+
+Honest feedback welcome — what's missing for your workflow?
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  3. REDDIT POSTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TITLE: I built a simple alternative to vMix for church/event
+LED screen control — free trial, feedback welcome
+
+BODY:
+Background: I run AV for a small church and kept finding
+vMix too complex and expensive for what I needed. OBS is
+great for streaming but overkill for just playing videos
+on an LED screen. So I built something simpler.
+
+StageCue is a media controller specifically for live
+events — churches, weddings, concerts, school productions.
+The entire workflow is: load media → preview → CUT to LED.
+
+Tech stack: Electron app, Windows + Mac.
+
+What it does:
+- Dual preview/output window (like vMix but simpler)
+- Auto-detects HDMI display and opens fullscreen
+- CUT, FADE, WIPE transitions
+- Playlist with video thumbnails, drag to reorder
+- Save/reload playlists
+- Audio device routing
+
+What it doesn't do (intentionally):
+- No streaming/recording (use OBS for that)
+- No live camera input
+- No graphics/overlay system
+
+$39 one-time with a 14-day free trial.
+Website: stagecue.pro
+
+Genuinely curious what the church AV community thinks
+is missing. Happy to add features that make weekly
+services easier to run.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  4. ALTERNATIVETO.NET LISTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Go to: https://alternativeto.net/software/add/
+
+Name: StageCue
+URL: https://stagecue.pro
+Short description:
+Simple LED screen controller for live events. Control
+video, images and audio on your LED display. Easier than
+vMix, simpler than OBS. Windows and Mac.
+
+List as alternative to:
+- vMix
+- OBS Studio
+- ProPresenter
+- MediaShout
+
+Tags: video, live events, LED screen, media controller,
+church, presentation, AV
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  5. YOUTUBE VIDEO SCRIPT OUTLINE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+VIDEO TITLE:
+StageCue — Simple LED Screen Controller for Live Events
+(vMix Alternative 2024)
+
+DESCRIPTION:
+StageCue is the simplest way to control your LED screen
+or projector at live events — churches, weddings, concerts
+and corporate events.
+
+Unlike vMix ($600+) or OBS (built for streaming), StageCue
+is designed purely for media playback on LED screens.
+Get up and running in 2 minutes.
+
+🔗 Free 14-day trial: https://stagecue.pro
+💰 Buy Pro license: https://jinivestment.gumroad.com/l/StageCue
+
+TIMESTAMPS:
+0:00 Introduction — what is StageCue?
+0:30 Loading media into the playlist
+1:00 Preview window — checking before going live
+1:30 CUT to LED screen — live output
+2:00 FADE and WIPE transitions
+2:20 Auto LED screen detection
+2:45 Saving and loading playlists
+3:00 Audio device control
+3:20 License and pricing
+3:40 Download the free trial
+
+TAGS:
+LED screen controller, vMix alternative, church AV software,
+live event media, OBS alternative, stagecue, LED wall software,
+church media controller, wedding video software, event AV
+
+SCRIPT INTRO (first 30 seconds — most important):
+"If you've ever struggled with vMix being too complicated
+or too expensive just for playing videos on a LED screen
+at your church service or event — I built something for you.
+It's called StageCue. Let me show you how it works."
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  6. GOOGLE SEARCH CONSOLE — SETUP STEPS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Go to https://search.google.com/search-console
+2. Click "Add property" → enter: https://stagecue.pro
+3. Choose "HTML tag" verification method
+4. Copy the meta tag — looks like:
+   <meta name="google-site-verification" content="XXXXXX">
+5. Send the tag to Claude — I'll add it to your index.html
+6. Upload updated index.html to GitHub
+7. Back in Search Console → click "Verify"
+8. Go to Sitemaps → enter: https://stagecue.pro/sitemap.xml
+9. Click "Submit"
+10. Go to URL Inspection → enter https://stagecue.pro
+    → click "Request Indexing"
+
+Google will index your site within 1-7 days after this.
