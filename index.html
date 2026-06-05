@@ -386,6 +386,24 @@ footer{
 .f-links a:hover{color:var(--text2);}
 .f-copy{font-size:11px;color:var(--text3);}
 
+
+/* ── VIDEO SECTION ── */
+.video-section{padding:72px 0;background:var(--bg);}
+.video-wrap{
+  position:relative;width:100%;
+  padding-bottom:56.25%;
+  height:0;overflow:hidden;
+  border-radius:10px;
+  box-shadow:0 24px 60px rgba(0,0,0,.7);
+  border:1px solid var(--border);
+  margin-top:44px;
+}
+.video-wrap iframe{
+  position:absolute;top:0;left:0;
+  width:100%;height:100%;
+  border:0;border-radius:10px;
+}
+
 /* ── REVEAL ── */
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
@@ -416,6 +434,7 @@ footer{
   <div class="nav-logo">Stage<span>Cue</span></div>
   <div class="nav-links">
     <a href="#features">Features</a>
+    <a href="#demo">Demo</a>
     <a href="#how">How it works</a>
     <a href="#pricing">Pricing</a>
     <a href="#faq">FAQ</a>
@@ -608,6 +627,24 @@ footer{
 </div>
 </section>
 
+
+<!-- VIDEO DEMO -->
+<section class="video-section" id="demo">
+<div class="wrap">
+  <div class="s-label">Watch the Demo</div>
+  <h2>See StageCue in action.</h2>
+  <p class="s-sub">Watch a full walkthrough — from loading your media to going live on the LED screen in minutes.</p>
+  <div class="video-wrap reveal">
+    <iframe
+      src="https://www.youtube.com/embed/kg4CocRh6Ho?rel=0&modestbranding=1&color=white"
+      title="StageCue — Simple LED Screen Controller for Live Events (Full Demo)"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+</section>
+
 <!-- FAQ -->
 <section class="faq" id="faq">
 <div class="wrap">
@@ -682,11 +719,12 @@ footer{
   <div class="f-links">
     <a href="#features">Features</a>
     <a href="#pricing">Pricing</a>
+    <a href="#demo">Demo</a>
     <a href="#faq">FAQ</a>
     <a href="mailto:hello@stagecue.pro">hello@stagecue.pro</a>
     <a href="https://jinivestment.gumroad.com/l/StageCue" target="_blank">Buy Now</a>
   </div>
-  <div class="f-copy">© 2024 StageCue · stagecue.pro</div>
+  <div class="f-copy">© 2025 StageCue · stagecue.pro</div>
 </footer>
 
 <script>
